@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<title>Spring Boot: javabeginnerstutorial.com</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div th:if="${not #lists.isEmpty(photosUrls)}">
+<h2>URLS List</h2>
+<table class="glyphicon glyphicon-calendar">
+<tr>
+<th>URL</th>
+<th>ThumbNailURL</th>
+</tr>
+<tr th:each="photosurl : ${photosUrls}">
+<td th:text="${photosurl.url}"></td>
+<td th:text="${photosurl.thumbnailUrl}"></td>
+</tr>
+</table>
+</div>
+</body>
+</html>
